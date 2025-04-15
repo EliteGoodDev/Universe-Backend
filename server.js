@@ -4,6 +4,7 @@ require("dotenv").config();
 
 const nftSystemRoutes = require('./routes/nftSystemRoutes');
 const nftNameRoutes = require('./routes/nftNameRoutes');
+const nftCreatorSignRoutes = require('./routes/nftCreatorSignRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,7 +21,7 @@ app.get("/", (req, res) => {
 // API Routes
 app.use('/api/nftsystem', nftSystemRoutes);
 app.use('/api/nftname', nftNameRoutes);
-
+app.use('/api/nftcreatorsign', nftCreatorSignRoutes);
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
